@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seandee</title>
+    <style>
+
+        body{
+            background-color: #FF7F7F;
+        }
+
+        div{
+          
+            text-align: center;
+            vertical-align: middle;
+        }
+        #no{
+            position: absolute;
+        }
+
+    </style>
+
+</head>
+<body >
+    <div>
+    <h1>Can I court you?</h1>
+    <button id="yes">Yes</button>
+    <button id="no">No</button>
+    </div>
+    
+ <script>
+        alert("Hi love!!!");
+        alert("I just wanna say something po");
+       while (!confirm("Are you ready?")) {}
+
+       document.getElementById("yes").addEventListener("click",function(){
+            alert("YEHEEEY <3 ");
+        });
+        const button = document.getElementById('no');
+
+    button.addEventListener('click', () => {
+        const element = document.getElementById('no');
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+
+        const elementWidth = element.offsetWidth;
+        const elementHeight = element.offsetHeight;
+
+        const centerLeft = (screenWidth / 2) - (elementWidth / 2);
+        const centerTop = (screenHeight / 2) - (elementHeight / 2);
+
+        const randomLeft = Math.floor(Math.random() * (screenWidth - elementWidth));
+        const randomTop = Math.floor(Math.random() * (screenHeight - elementHeight));
+
+        // Choose either the center position or a random position
+        const left = Math.random() > 0.5 ? centerLeft : randomLeft;
+        const top = Math.random() > 0.5 ? centerTop : randomTop;
+
+        // Set the element's position and top/left styles
+        element.style.position = 'absolute';
+        element.style.top = `${top}px`;
+        element.style.left = `${left}px`;
+});
+
+
+       
+    </script>
+</body>
+</html>
